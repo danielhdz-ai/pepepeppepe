@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "**",
+      "use": "@vercel/static"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/proxy-bingx/:path*",
+      "destination": "/api/proxy-bingx.js"
+    },
+    {
+      "source": "/api/proxy-bingx",
+      "destination": "/api/proxy-bingx.js"
+    },
+    {
+      "source": "/api/proxy-bitget/:path*",
+      "destination": "/api/proxy-bitget.js"
+    },
+    {
+      "source": "/api/proxy-bitget",
+      "destination": "/api/proxy-bitget.js"
+    },
+    {
+      "source": "/api/proxy-mexc/:path*",
+      "destination": "/api/proxy-mexc.js"
+    },
+    {
+      "source": "/api/proxy-mexc",
+      "destination": "/api/proxy-mexc.js"
+    },
+    {
+      "source": "/api/proxy-lbank/:path*",
+      "destination": "/api/proxy-lbank.js"
+    },
+    {
+      "source": "/api/proxy-lbank",
+      "destination": "/api/proxy-lbank.js"
+    },
+    {
+      "source": "/api/proxy-bitunix/:path*",
+      "destination": "/api/proxy-bitunix.js"
+    },
+    {
+      "source": "/api/proxy-bitunix",
+      "destination": "/api/proxy-bitunix.js"
+    },
+    {
+      "source": "/api/credentials",
+      "destination": "/api/credentials.js"
+    },
+    {
+      "source": "/api/operations",
+      "destination": "/api/operations.js"
+    },
+    {
+      "source": "/app",
+      "destination": "/platform.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "audicion"
+        }
+      ],
+      "destination": "/platform.html"
+    }
+  ]
+}
