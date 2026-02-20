@@ -50100,7 +50100,7 @@ openssl rsa -in private_key.pem -pubout -out public_key.pem</pre>
             selectElement.innerHTML = '';
 
             // Opción "Todas las cuentas" para algunos selectores
-            if (['dashboard-account-select', 'new-dashboard-account-select', 'analytics-account-select', 'equity-account-select', 'daily-journal-account-select', 'calendar-account-select', 'filter-account', 'chartbook-account-select', 'informe-account-select'].includes(selectId)) {
+            if (['dashboard-account-select', 'new-dashboard-account-select', 'analytics-account-select', 'equity-account-select', 'daily-journal-account-select', 'calendar-account-select', 'filter-account', 'chartbook-account-select', 'informe-account-select', 'audicion-account-select'].includes(selectId)) {
                 const allOption = document.createElement('option');
                 allOption.value = 'all';
                 allOption.textContent = 'Todas las cuentas';
@@ -56362,6 +56362,7 @@ async function onUserLogin(user) {
                     'daily-journal-account-select',
                     'chartbook-account-select',
                     'calendar-account-select',
+                    'audicion-account-select',
                     'op-account',
                     'filter-account',
                     'bingx-account',
@@ -56499,6 +56500,9 @@ async function onUserLogin(user) {
                     break;
                 case 'calendar':
                     if (typeof updateCalendar === 'function') updateCalendar();
+                    break;
+                case 'audicion':
+                    if (typeof refreshAudicion === 'function') refreshAudicion();
                     break;
                 default:
                     // Por defecto refrescar nuevo dashboard
